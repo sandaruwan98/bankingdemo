@@ -1,5 +1,7 @@
 package com.example.bankingdemo.domains;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.time.LocalDate;
 
@@ -7,6 +9,7 @@ import javax.persistence.*;
 
 @Entity
 @Table
+@ApiModel
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +34,7 @@ public class User {
         this.dob = dob;
         this.bankAcc = bankAcc;
     }
-
+    @ApiModelProperty(example = "1",required = true)
     public Long getId() {
         return id;
     }
@@ -39,7 +42,7 @@ public class User {
     public void setId(Long id) {
         this.id = id;
     }
-
+    @ApiModelProperty(example = "lakshan123",required = true)
     public String getUsername() {
         return username;
     }
@@ -58,6 +61,7 @@ public class User {
         this.password = password;
     }
 
+    @ApiModelProperty(example = "Abc Road,Town",required = true)
     public String getAddress() {
         return address;
     }
@@ -66,6 +70,7 @@ public class User {
         this.address = address;
     }
 
+    @ApiModelProperty(example = "1998-08-04",required = true)
     public LocalDate getDob() {
         return dob;
     }

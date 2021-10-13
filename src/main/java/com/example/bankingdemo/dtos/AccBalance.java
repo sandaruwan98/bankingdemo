@@ -1,5 +1,9 @@
 package com.example.bankingdemo.dtos;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel
 public class AccBalance {
     Long accid;
     Double balance;
@@ -8,7 +12,7 @@ public class AccBalance {
         this.accid = accid;
         this.balance = balance;
     }
-
+    @ApiModelProperty(name = "Bank account number",example = "3003837",required = true)
     public Long getAccid() {
         return accid;
     }
@@ -16,7 +20,7 @@ public class AccBalance {
     public void setAccid(Long accid) {
         this.accid = accid;
     }
-
+    @ApiModelProperty(name = "Account Balance",example = "10000.23",required = true)
     public Double getBalance() {
         return balance;
     }
